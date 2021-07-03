@@ -1,6 +1,6 @@
-# Substrate Pallet Template
+# Jeton Network Pallet Template
 
-This is a template for a Substrate pallet which lives as its own crate so it can be imported into multiple runtimes. It is based on the ["template" pallet](https://github.com/paritytech/substrate/tree/master/bin/node-template/pallets/template) that is included with the [Substrate node template](https://github.com/paritytech/substrate/tree/master/bin/node-template).
+This is a template for a Jeton Network pallet which lives as its own crate so it can be imported into multiple runtimes. It is based on the ["template" pallet](https://github.com/paritytech/substrate/tree/master/bin/node-template/pallets/template) that is included with the [Substrate node template](https://github.com/paritytech/substrate/tree/master/bin/node-template).
 
 Check out the [HOWTO](HOWTO.md) to learn how to use this for your own runtime module.
 
@@ -29,9 +29,8 @@ This pallet does not depend on any other FRAME pallet or externally developed mo
 To add this pallet to your runtime, simply include the following to your runtime's `Cargo.toml` file:
 
 ```TOML
-[dependencies.pallet-template]
-default_features = false
-git = 'https://github.com/substrate-developer-hub/substrate-pallet-template.git'
+# external pallets
+pallet-template = {default-features = false, version = '0.1.0', git = 'https://github.com/JetonNetwork/pallet-jton-template.git'}
 ```
 
 and update your runtime's `std` feature to include this pallet:
@@ -57,7 +56,7 @@ impl pallet_template::Config for Runtime {
 and include it in your `construct_runtime!` macro:
 
 ```rust
-TemplatePallet: pallet_template::{Module, Call, Storage, Event<T>},
+Template: pallet_template::{Module, Call, Storage, Event<T>},
 ```
 
 ### Genesis Configuration

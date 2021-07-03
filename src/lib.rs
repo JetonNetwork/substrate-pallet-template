@@ -7,9 +7,6 @@
 pub use pallet::*;
 
 use codec::{Decode, Encode};
-use sp_std::boxed::{
-	Box
-};
 
 #[cfg(test)]
 mod mock;
@@ -121,8 +118,10 @@ pub mod pallet {
 				},
 			}
 		}
+	}
 }
 
 impl<T: Config> Pallet<T> {
 
 }
+
